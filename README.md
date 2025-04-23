@@ -1,54 +1,77 @@
-🛡️ Anti-Cheat System
+# 🛡️ Games4u Anti-Cheat System
 
-👤 Developer Information
-Name: Arthur Gipson
+> A real-world anti-tamper and telemetry system for PC games  
+> 💻 Written in C++ · Reverse Engineering · WinAPI · Manual Mapping
 
-In 2019, I was contracted to lead development of a fully custom anti-cheat solution for a PC game in production.
-The game was ultimately cancelled, but this repo reflects the work done toward that project.
+---
 
-It combines low-level C++ engineering, WinAPI reverse engineering, manual module mapping, and more.
+In 2019, I was contracted to lead development of a fully custom anti-cheat solution for a PC game in production. The game was ultimately cancelled, but this repo reflects the work done toward that project.
 
-🔐 Core Cybersecurity Concepts Demonstrated
+It combines **low-level C++ systems engineering**, **WinAPI manipulation**, **manual module mapping**, and multiple layers of **telemetry, obfuscation, and anti-debugging logic**.
 
-🧬 Anti-Debugging
-Direct inspection and validation of memory regions containing DbgBreakPoint, DbgUserBreakPoint functions
-Flagging and disconnect logic for any tampered breakpoint instructions
-Kernel debugging detection via flag bytes, emulating rootkit defense logic
+---
 
-🔒 Memory Integrity + Remote Thread Analysis
-Runtime memory reads from target processes via OpenProcess and ReadProcessMemory
-Manual inspection of thread start addresses using GetThreadStartAddress
-Simulates EDR-style inspection workflows to detect injected threads or shellcode
+## 🔐 Core Cybersecurity Concepts Demonstrated
 
-🔭 WMI Monitoring & Process Surveillance
-Active use of Windows Management Instrumentation (WMI) to monitor:
-Win32_Process creation
-Win32_Thread spawns
-Win32_Service events
-Asynchronous notification system for live event-driven detection
-Exposes weak points commonly used in malware or cheats for stealth injection
+### 🧬 Anti-Debugging
+- Direct inspection of memory regions (`DbgBreakPoint`, `DbgUserBreakPoint`)
+- Flags and disables tampered or replaced debug traps
+- Kernel debugging detection via flag byte inspection (rootkit-level logic)
 
-📡 Secure Communication & Encryption
-Custom TCP client/server communication protocol
-All packet content XOR-encrypted, with option for RC4-based symmetric encryption
-Telemetry includes anti-debug flags, HWID fingerprints, and login credentials
+---
 
-📸 Screen Capture Logging
-Full screen capture functionality (JPEG/BMP support)
-Uses GDI/GDI+ to manually encode screen content
-Prepares screenshots for secure upload, validating integrity of remote environment
+### 🔒 Memory Integrity + Remote Thread Analysis
+- Reads memory of external processes via `OpenProcess`, `ReadProcessMemory`
+- Extracts thread entry points using `GetThreadStartAddress`
+- Simulates advanced EDR detection workflows for injected shellcode
 
-🆔 Hardware Fingerprinting
-Reads disk serial number and device info using DeviceIoControl + IOCTL_STORAGE_QUERY_PROPERTY
-Flags inconsistencies and spoofing attempts
-Rejects clients with suspiciously short, invalid, or malformed HWIDs
+---
 
-💾 Manual Module Injection (Userland Mapping)
-Implements a full PE file loader from scratch (x32ManualMap)
-Relocates image, resolves imports, calls entry points
-Simulates modern shellcode-style loading behavior as used by malware and red teamers
+### 🔭 WMI Monitoring & Process Surveillance
+- Hooks and monitors WMI event subscriptions:
+  - `Win32_Process`
+  - `Win32_Thread`
+  - `Win32_Service`
+- Detects stealth cheat activity via system-level process creation
 
-🚫 Anti-Reversing Protections
-Checks PatchGuard, Secure Boot, DSE settings by inspecting BCD configuration
-Optional logic to deny access when unsafe kernel flags are active
-Mimics boot-chain enforcement logic from modern endpoint security agents
+---
+
+### 📡 Secure Communication & Encryption
+- Custom TCP client/server design
+- XOR and RC4-encrypted telemetry transmission
+- Includes encrypted HWID, debug status, and login state
+
+---
+
+### 📸 Screen Capture Logging
+- Captures screen with GDI/GDI+ (BMP/JPG support)
+- Used for remote player session verification and fraud audit
+- Integrates into telemetry pipeline
+
+---
+
+### 🆔 Hardware Fingerprinting
+- Queries physical hardware via `DeviceIoControl`, `IOCTL_STORAGE_QUERY_PROPERTY`
+- Detects spoofed, virtualized, or tampered environments
+- HWID system used for anti-ban evasion prevention
+
+---
+
+### 💾 Manual Module Injection (Userland Mapping)
+- Custom-built `x32ManualMap` PE loader
+- Handles relocation, import resolution, and entry point execution
+- Emulates modern red-team style shellcode injection
+
+---
+
+### 🚫 Anti-Reversing Protections
+- Inspects Secure Boot, PatchGuard, and DSE status from BCD config
+- Detects insecure boot chains and test-signed drivers
+- Blocks execution if system fails trust checks
+
+---
+
+## 🧠 This Project Is Valuable For:
+- Security engineers (malware, red team, anti-cheat, AV/EDR)
+- Game security researchers and Windows kernel interns
+- Cybersecurity hiring managers evaluating hands-on depth
