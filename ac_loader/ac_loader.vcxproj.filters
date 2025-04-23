@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Core">
+      <UniqueIdentifier>{6f7640c4-26e9-4e62-9557-4265480bcf15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Loader">
+      <UniqueIdentifier>{ea00750a-3be3-4cad-9477-464ad51c62ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Network">
+      <UniqueIdentifier>{52247b43-29e7-4c2f-b281-4e0775bd7075}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Extra">
+      <UniqueIdentifier>{f0e394c3-5e32-4214-87ff-e8791a2cd9d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Cryption">
+      <UniqueIdentifier>{88ca2035-3208-4e76-af1a-af90989822b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Loader\Security">
+      <UniqueIdentifier>{7aa64427-bfe8-4ad6-9629-6513925e9636}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Core.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Cryption.cpp">
+      <Filter>Core\Cryption</Filter>
+    </ClCompile>
+    <ClCompile Include="TCPClient.cpp">
+      <Filter>Core\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Network.cpp">
+      <Filter>Core\Network</Filter>
+    </ClCompile>
+    <ClCompile Include="Loader.cpp">
+      <Filter>Loader</Filter>
+    </ClCompile>
+    <ClCompile Include="Config.cpp">
+      <Filter>Core\Extra</Filter>
+    </ClCompile>
+    <ClCompile Include="HWID.cpp">
+      <Filter>Loader\Security</Filter>
+    </ClCompile>
+    <ClCompile Include="AntiDebug.cpp">
+      <Filter>Loader\Security</Filter>
+    </ClCompile>
+    <ClCompile Include="x32ManualMap.cpp">
+      <Filter>Loader</Filter>
+    </ClCompile>
+    <ClCompile Include="Kernel.cpp">
+      <Filter>Loader\Security</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Core.hpp">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Cryption.hpp">
+      <Filter>Core\Cryption</Filter>
+    </ClInclude>
+    <ClInclude Include="TCPClient.hpp">
+      <Filter>Core\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Network.hpp">
+      <Filter>Core\Network</Filter>
+    </ClInclude>
+    <ClInclude Include="Loader.hpp">
+      <Filter>Loader</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities.hpp">
+      <Filter>Core\Extra</Filter>
+    </ClInclude>
+    <ClInclude Include="apiset.hpp">
+      <Filter>Core\Extra</Filter>
+    </ClInclude>
+    <ClInclude Include="nt_ddk.hpp">
+      <Filter>Core\Extra</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.hpp">
+      <Filter>Core</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

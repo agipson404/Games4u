@@ -1,0 +1,8 @@
+Do not release this error codes to the public. They contain valuable information that could be used against the anticheat.
+
+Server Error Codes:
+
+X1: The user modified an anti-debugging feature. Specifically DbgBreakPoint & DbgUserBreakPoint. This is a 100% ban. User will be flagged.
+
+X2: The user's HWID isn't the normal length. This could be that an attempt to spoof their HWID, or just a simple non-threatening error. Ask
+the user to re-run the program. This is a flaggable error code if found that the user was attempting to spoof their HWID.
