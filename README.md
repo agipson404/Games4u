@@ -1,9 +1,4 @@
-# 🛡️ Games4u Anti-Cheat System
-
-> A real-world anti-tamper and telemetry system for PC games  
-> 💻 Written in C++ · Reverse Engineering · WinAPI · Manual Mapping
-
----
+# 🛡️ Anti-Cheat System
 
 In 2019, I was contracted to lead development of a fully custom anti-cheat solution for a PC game in production. The game was ultimately cancelled, but this repo reflects the work done toward that project.
 
