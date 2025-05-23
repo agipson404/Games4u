@@ -40,8 +40,6 @@ namespace Games4u_Server
             }
         }
         private void Main_Load(object sender, EventArgs e)
-        {
-            //Core.Array.ConvertToBitmap(@"C:\Users\lolvu\OneDrive\Documents\Visual Studio 2013\Projects\Games4u\Release\file.jpeg");
             anticheatserverCheckBox.Checked = true;
             SendAntiCheatModules.Checked = true;
             Thread m_Thread = new Thread(new ThreadStart(Loop));
